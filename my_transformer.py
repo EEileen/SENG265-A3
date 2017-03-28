@@ -10,7 +10,7 @@ preconditions
 import sys
 import copy
 import math
-import Line_Point
+import Line_Point_colour
 
 '''
 purpose
@@ -25,6 +25,7 @@ def draw_ring(lines, delta_y, n):
 	
 	if n == 3:
 		for line in new_lines:
+			#line.replace("Purple","Red")
 			line.scale(1.70)
 			line.translate(-145.0, delta_y-190.0)
 			
@@ -91,9 +92,10 @@ def load_line_file(file_object):
 	for line in file_object:
 		# convert text line to a Line object
 		line_object = line.split()
-		point0 = Line_Point.Point(float(line_object[1]), float(line_object[2]))
-		point1 = Line_Point.Point(float(line_object[3]), float(line_object[4]))
-		line_object = Line_Point.Line(point0, point1)
+		point0 = Line_Point_colour.Point(float(line_object[1]), float(line_object[2]))
+		point1 = Line_Point_colour.Point(float(line_object[3]), float(line_object[4]))
+		colour = "Purple"
+		line_object = Line_Point_colour.Line(point0, point1, colour)
 
 		line_objects.append(line_object)
 	
@@ -128,4 +130,3 @@ row_parameters = [
 
 for i in range(number_of_rows):
 	draw_ring(L, row_parameters[i][0], row_parameters[i][1])
-
