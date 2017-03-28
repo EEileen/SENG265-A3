@@ -147,4 +147,3 @@ row_parameters = [
 
 for i in range(number_of_rows):
 	draw_row(L, row_parameters[i][0], row_parameters[i][1])
-
