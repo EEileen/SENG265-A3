@@ -20,5 +20,5 @@ python lines_to_svg_colour.py tree.txt > tree.svg
 
 # replicate tree in rings
 python my_transformer.py $number_of_rows $color < tree2.txt > tree_rows.txt
-python lines_to_svg_colour.py tree_rings.txt > tree_rows.svg
+python lines_to_svg_colour.py tree_rows.txt > tree_rows.svg
 
